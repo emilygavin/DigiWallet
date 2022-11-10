@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Document
-public class PassportCard {
+public class PassportCard extends Cards{
     private String country;
     private String name;
     private String nationality;

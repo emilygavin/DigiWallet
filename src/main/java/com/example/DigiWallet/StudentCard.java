@@ -5,10 +5,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Document
-public class StudentCard {
+public class StudentCard extends Cards{
     private String name;
     private String dateOfBirth;
-    private String College;
+    private String college;
     private String studentID;
     private String courseTitle;
     private String expiryDate;
@@ -16,7 +16,7 @@ public class StudentCard {
     public StudentCard(String name, String dateOfBirth, String college, String studentID, String courseTitle, String expiryDate) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
-        College = college;
+        this.college = college;
         this.studentID = studentID;
         this.courseTitle = courseTitle;
         this.expiryDate = expiryDate;
