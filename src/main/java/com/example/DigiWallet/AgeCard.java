@@ -11,4 +11,12 @@ public class AgeCard {
     private Gender Gender;
     private Address address;
     private String cardNumber;
+
+    public AgeCard(String name, String dateOfBirth, com.example.DigiWallet.Gender gender, Address address, String cardNumber) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        Gender = gender;
+        this.address = address;
+        this.cardNumber = cardNumber;
+    }
 }

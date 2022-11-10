@@ -10,6 +10,16 @@ public class User {
     @Id
     private String id;
     private String email;
-    private Integer password;
-    private Card card;
+    private String password;
+    private Cards cards;
+
+    public User(String email, String password, Cards cards) {
+        this.email = email;
+        this.password = password;
+        this.cards = cards;
+    }
+
+    public User() {
+
+    }
 }
