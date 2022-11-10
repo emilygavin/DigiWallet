@@ -20,8 +20,8 @@ public class DigiWalletApplication {
 			StudentCard studentCard = new StudentCard("Kayla Waldron", "31/03/2003", "DCU", "983923850", "Teaching", "31/08/2023");
 			Cards card1 = new Cards(ageCard);
 			Cards card2 = new Cards(studentCard);
-			User user1 = new User("kaylawaldronn@hotmail.com", "Password123", card1);
-			User user2 = new User("kaylawaldronn@hotmail.com", "Password123", card2);
+			User user1 = new User("kaylawaldron@hotmail.com", "Password123", card1);
+			User user2 = new User("kaylawaldron@hotmail.com", "Password123", card2);
 
 			userRepository.insert(user1);
 			userRepository.insert(user2);
