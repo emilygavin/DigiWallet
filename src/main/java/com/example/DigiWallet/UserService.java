@@ -16,6 +16,11 @@ public class UserService {
     }
 
     public User addNewUser(User user){
-        return userRepository.insert(user);
+        return userRepository.save(user);
+    }
+
+    public User findById(String id) {
+        User user = getAllUsers().stream().filter(t -> id.equals(t.getId())).findFirst().orElse(null);
+        return user;
     }
 }

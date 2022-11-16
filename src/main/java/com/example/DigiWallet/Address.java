@@ -2,7 +2,10 @@ package com.example.DigiWallet;
 
 import lombok.Data;
 
+import javax.persistence.Embeddable;
+
 @Data
+@Embeddable
 public class Address {
     private String firstLine;
     private String secondLine;
@@ -18,5 +21,9 @@ public class Address {
         this.county = county;
         this.country = country;
         this.postCode = postCode;
+    }
+
+    public Address() {
+
     }
 }

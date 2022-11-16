@@ -5,29 +5,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
+
 @Data
-@Document
 @AllArgsConstructor
 @NoArgsConstructor
+@Embeddable
 public class Cards{
+    @Embedded
     private DriversLicense driversLicense;
+    @Embedded
     private AgeCard ageCard;
+    @Embedded
     private PassportCard passportCard;
+    @Embedded
     private StudentCard studentCard;
-
-    public Cards(DriversLicense driversLicense) {
-        this.driversLicense = driversLicense;
-    }
-
-    public Cards(AgeCard ageCard) {
-        this.ageCard = ageCard;
-    }
-
-    public Cards(PassportCard passportCard) {
-        this.passportCard = passportCard;
-    }
-
-    public Cards(StudentCard studentCard) {
-        this.studentCard = studentCard;
-    }
 }

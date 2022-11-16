@@ -1,14 +1,17 @@
 package com.example.DigiWallet;
 
 import lombok.Data;
-import org.springframework.data.mongodb.core.mapping.Document;
+
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 
 @Data
-@Document
+@Embeddable
 public class AgeCard extends Cards{
     private String name;
     private String dateOfBirth;
     private Gender gender;
+    @Embedded
     private Address address;
     private String cardNumber;
 
