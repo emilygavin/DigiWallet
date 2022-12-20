@@ -1,24 +1,22 @@
 package com.example.DigiWallet;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 
-@Data
-@AllArgsConstructor
+@ToString
+@Getter
+@Setter
+@EqualsAndHashCode
 @NoArgsConstructor
-@Embeddable
+@AllArgsConstructor
 public class Cards{
-    @Embedded
     private DriversLicense driversLicense;
-    @Embedded
     private AgeCard ageCard;
-    @Embedded
     private PassportCard passportCard;
-    @Embedded
     private StudentCard studentCard;
 }
