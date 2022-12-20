@@ -1,13 +1,18 @@
 package com.example.DigiWallet;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Embeddable;
 
-@Data
-@Embeddable
-public class PassportCard extends Cards{
+@ToString
+@Getter
+@Setter
+@EqualsAndHashCode
+@NoArgsConstructor
+@AllArgsConstructor
+public class PassportCard{
     private String country;
     private String name;
     private String nationality;

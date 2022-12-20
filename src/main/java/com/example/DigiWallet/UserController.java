@@ -11,7 +11,6 @@ import java.util.List;
 @AllArgsConstructor
 public class UserController {
     private UserService userService;
-    private UserRepository userRepository;
 
     @GetMapping
     public List<User> fetchAllUsers(){
@@ -20,31 +19,36 @@ public class UserController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public User registerNewUser (@RequestBody User user){
+    public User registerNewUser (@RequestBody User user) throws Exception {
         return userService.addNewUser(user);
     }
 
     @PostMapping(path = "/addAgeCard/{id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public void AddAgeCardDetails(@RequestBody AgeCard ageCard, @PathVariable String id) {
+    public User AddAgeCard(@RequestBody AgeCard ageCard, @PathVariable String id) {
+        return userService.addAgeCard(ageCard, id);
+    }
 
-        //Find sensor to insert metrics into
-        User user = userService.findById(id);
-        if (user == null) {
-            throw new IllegalStateException("User ID has not been registered!");
-        } else {
-            if (user.getCards().get(0).getAgeCard() == null) {
-                //user.getCards().get(0).getAgeCard().setAgeCard(ageCard);
-                user.getCards().get(0).getAgeCard().setName(ageCard.getName());
-                user.getCards().get(0).getAgeCard().setGender(ageCard.getGender());
-                user.getCards().get(0).getAgeCard().setAddress(ageCard.getAddress());
-                user.getCards().get(0).getAgeCard().setDateOfBirth(ageCard.getDateOfBirth());
-                user.getCards().get(0).getAgeCard().setCardNumber(ageCard.getCardNumber());
-                userRepository.save(user);
-            }
-            else {
-                throw new IllegalStateException("Age Card already exists!");
-            }
-        }
+    @PostMapping(path = "/addStudentCard/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public User AddStudentCard(@RequestBody StudentCard studentCard, @PathVariable String id) {
+        return userService.addStudentCard(studentCard, id);
+    }
+
+    @PostMapping(path = "/addDriverslicense/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public User AddDriversLicense(@RequestBody DriversLicense driversLicense, @PathVariable String id) {
+        return userService.addDriversLicense(driversLicense, id);
+    }
+
+    @PostMapping(path = "/addPassportCard/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public User AddPassportCard(@RequestBody PassportCard passportCard, @PathVariable String id) {
+        return userService.addPassportCard(passportCard, id);
+    }
+
+    @DeleteMapping(value = "/delete/{id}")
+    public void deleteUser(@PathVariable String id) throws Exception {
+        userService.deleteUser(id);
     }
 }
