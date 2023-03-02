@@ -33,7 +33,7 @@ public class DigiWalletApplication {
 			cards.setDriversLicense(driversLicense);
 
 			List<User> users = Arrays.asList(
-					new User("3948gujv028v2b35inj3", "emilygavin@hotmail.com", "Password123", cards)
+					new User("3948gujv028v2b35inj3", "Emily Gavin", "emilygavin@hotmail.com", "Password123", cards)
 			);
 
 			//userRepository.insert(users);
