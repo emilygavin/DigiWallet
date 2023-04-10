@@ -17,6 +17,7 @@ import java.util.List;
 public class User {
     private String id;
     private String name;
+    private Gender gender;
     private String email;
     private String password;
     private Cards cards;

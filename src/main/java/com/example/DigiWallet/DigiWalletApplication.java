@@ -28,10 +28,10 @@ public class DigiWalletApplication {
 		return args -> {
 			Address address = new Address("Ros Ard", "Pool Boy", "Ballinasloe", "Galway", "Ireland", "H53 VX75");
 
-			AgeCard ageCard = new AgeCard("Emily Gavin", "05/04/2001", Gender.FEMALE, address, "123456");
-			StudentCard studentCard = new StudentCard("Emily Gavin", "31/03/2003", "DCU", "983923850", "Teaching", "31/08/2023");
-			DriversLicense driversLicense = new DriversLicense("Emily Gavin", "05-04-2001", Gender.FEMALE, "IRELAND", "31-03-2013", "13-08-2028", "12345678", address, "Car");
-			PassportCard passportCard = new PassportCard("Ireland", "Emily Gavin", "Irish", "05-04-2001", Gender.FEMALE, "14-12-2015", "24-06-2023");
+			AgeCard ageCard = new AgeCard("Age Card", "Emily Gavin", "05/04/2001", Gender.FEMALE, address, "123456");
+			StudentCard studentCard = new StudentCard("Student Card","Emily Gavin", "31/03/2003", "DCU", "983923850", "Teaching", "31/08/2023");
+			DriversLicense driversLicense = new DriversLicense("Drivers License","Emily Gavin", "05-04-2001", Gender.FEMALE, "IRELAND", "31-03-2013", "13-08-2028", "12345678", address, "Car");
+			PassportCard passportCard = new PassportCard("Passport Card","Ireland", "Emily Gavin", "Irish", "05-04-2001", Gender.FEMALE, "14-12-2015", "24-06-2023");
 
 			Cards cards = new Cards();
 			cards.setAgeCard(ageCard);
@@ -40,10 +40,10 @@ public class DigiWalletApplication {
 			cards.setDriversLicense(driversLicense);
 
 			List<User> users = Arrays.asList(
-					new User("3948gujv028v2b35inj3", "Emily Gavin", "emilygavin@hotmail.com", "Password123", cards)
+					new User("3948gujv028v2b35inj3", "Emily Gavin", Gender.FEMALE, "emilygavin@hotmail.com", "Password123", cards)
 			);
 
-			//userRepository.insert(users);
+			userRepository.insert(users);
 		};
 	}
 }
