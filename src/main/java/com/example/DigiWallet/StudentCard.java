@@ -13,6 +13,7 @@ import javax.persistence.Embeddable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StudentCard{
+    private String type;
     private String name;
     private String dateOfBirth;
     private String college;
