@@ -17,6 +17,16 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public User getUser(String email, String password) throws Exception {
+        User user = userRepository.findByEmail(email);
+//        if(user.getPassword()!=password){
+//            throw new Exception("Email or Password incorrect.");
+//        }
+//        else{
+            return user;
+//        }
+    }
+
     public static boolean PasswordValidation(String password)
     {
         if(password.length()>=8)
