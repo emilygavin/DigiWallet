@@ -1,5 +1,10 @@
 package com.example.DigiWallet;
 
+import com.mongodb.ConnectionString;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoDatabase;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,6 +23,8 @@ public class DigiWalletApplication {
 
 	@Bean
 	CommandLineRunner runner(UserRepository userRepository){
+
+
 		return args -> {
 			Address address = new Address("Ros Ard", "Pool Boy", "Ballinasloe", "Galway", "Ireland", "H53 VX75");
 

@@ -17,6 +17,12 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+    @GetMapping(path = "/login")
+    @ResponseStatus(HttpStatus.OK)
+    public User fetchUser(@RequestParam(name = "email") String email, @RequestParam(name = "password") String password) throws Exception {
+        return userService.getUser(email, password);
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public User registerNewUser (@RequestBody User user) throws Exception {
