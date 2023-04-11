@@ -5,6 +5,11 @@ import com.mongodb.MongoClientSettings;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -40,10 +45,22 @@ public class DigiWalletApplication {
 			cards.setDriversLicense(driversLicense);
 
 			List<User> users = Arrays.asList(
-					new User("3948gujv028v2b35inj3", "Emily Gavin", Gender.FEMALE, "emilygavin@hotmail.com", "Password123", cards)
+					new User("Emily Gavin", Gender.FEMALE, "emilygavin@hotmail.com", "Password123", cards)
 			);
 
-			userRepository.insert(users);
+//			OkHttpClient client = new OkHttpClient().newBuilder().build();
+//			MediaType mediaType = MediaType.parse("application/json");
+//			RequestBody body = RequestBody.create(mediaType, "{\n    \"collection\":\"user\",\n    \"database\":\"digiwallet\",\n    \"dataSource\":\"DigiWalletCluster2\",\n    \"projection\": {\"_id\": 1}\n\n}");
+//			Request request = new Request.Builder()
+//					.url("https://eu-west-1.aws.data.mongodb-api.com/app/data-tgrxq/endpoint/data/v1/action/findOne")
+//					.method("POST", body)
+//					.addHeader("Content-Type", "application/json")
+//					.addHeader("Access-Control-Request-Headers", "*")
+//					.addHeader("api-key", "06hSUyPcpttJInXMG0VolbqAZVS8KNmLr7ueaIllMYpOTYvYCrQCxqJMARh5ayAH")
+//					.build();
+//			Response response = client.newCall(request).execute();
+
+			//userRepository.insert(users);
 		};
 	}
 }
