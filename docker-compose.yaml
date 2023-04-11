@@ -1,15 +1,15 @@
 version: "3.8"
 services:
-  mongodb:
+  digiwallet:
     image: mongo
-    container_name: digiWallet
+    container_name: digiwallet
     ports:
       - 27017:27017
     volumes:
-      - data:/data
+      - mydata:/data
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=rootuser
-      - MONGO_INITDB_ROOT_PASSWORD=rootpass
+      - MONGO_INITDB_ROOT_USERNAME=emilygavin
+      - MONGO_INITDB_ROOT_PASSWORD=password123
   mongo-express:
     image: mongo-express
     container_name: digiWallet-express
@@ -21,8 +21,8 @@ services:
       - ME_CONFIG_MONGODB_ADMINPASSWORD=rootpass
       - ME_CONFIG_MONGODB_SERVER=mongodb
 volumes:
-  data: {}
+  mydata: {}
 
 networks:
   default:
-    name: mongodb_network
+    name: mynetwork
