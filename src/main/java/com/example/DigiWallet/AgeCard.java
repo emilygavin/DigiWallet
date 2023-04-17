@@ -17,6 +17,5 @@ public class AgeCard {
     private String name;
     private String dateOfBirth;
     private Gender gender;
-    private Address address;
     private String cardNumber;
 }
