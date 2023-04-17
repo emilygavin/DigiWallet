@@ -19,12 +19,12 @@ public class UserService {
 
     public User getUser(String email, String password) throws Exception {
         User user = userRepository.findByEmail(email);
-//        if(user.getPassword()!=password){
-//            throw new Exception("Email or Password incorrect.");
-//        }
-//        else{
+        if (user == null || !user.getPassword().equals(password)) {
+            throw new Exception("Invalid email or password");
+        }
+        else{
             return user;
-//        }
+        }
     }
 
     public static boolean PasswordValidation(String password)
@@ -48,16 +48,21 @@ public class UserService {
 
 
     public User addNewUser(User user) throws Exception {
-        if(user.getEmail().contains(".com") && user.getEmail().contains("@")) {
-            if (PasswordValidation(user.getPassword())) {
-                return userRepository.save(user);
-            }
-            else{
-                throw new Exception("Invalid Password! (Must have LETTERS, SPECIAL CHARACTERS and NUMBERS in your password with at least 8 digits)");
-            }
+        if (userRepository.findByEmail(user.getEmail()) != null){
+            throw new IllegalArgumentException("User with this Email already exists!");
         }
-        else {
-            throw new Exception("Invalid Email Address!");
+        else{
+            if(user.getEmail().contains(".com") && user.getEmail().contains("@")) {
+                if (PasswordValidation(user.getPassword())) {
+                    return userRepository.save(user);
+                }
+                else{
+                    throw new Exception("Invalid Password! (Must have LETTERS, SPECIAL CHARACTERS and NUMBERS in your password with at least 8 digits)");
+                }
+            }
+            else {
+                throw new Exception("Invalid Email Address!");
+            }
         }
     }
 
@@ -122,8 +127,9 @@ public class UserService {
         User user = findByIdAndReturnUser(id);
         if (user == null) {
             throw new IllegalStateException("User ID has not been registered!");
-        } else {
-            if (user.getCards().getStudentCard() == null) {
+        }
+        else {
+            if (user.getCards().getPassportCard() == null) {
                 user.getCards().setPassportCard(passportCard);
                 userRepository.save(user);
                 return user;

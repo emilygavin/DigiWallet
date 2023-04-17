@@ -17,6 +17,7 @@ public class PassportCard{
     private String country;
     private String name;
     private String nationality;
+    private String passportNumber;
     private String dateOfBirth;
     private Gender Gender;
     private String issueDate;
