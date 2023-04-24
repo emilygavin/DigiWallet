@@ -50,13 +50,13 @@ public class DigiWalletApplication {
 
 //			OkHttpClient client = new OkHttpClient().newBuilder().build();
 //			MediaType mediaType = MediaType.parse("application/json");
-//			RequestBody body = RequestBody.create(mediaType, "{\n    \"collection\":\"user\",\n    \"database\":\"digiwallet\",\n    \"dataSource\":\"DigiWalletCluster2\",\n    \"projection\": {\"_id\": 1}\n\n}");
+//			RequestBody body = RequestBody.create(mediaType, "{\n    \"collection\":\"user\",\n    \"database\":\"digiwallet\",\n    \"dataSource\":\"DigiWalletCluster\",\n    \"projection\": {\"_id\": 1}\n\n}");
 //			Request request = new Request.Builder()
 //					.url("https://eu-west-1.aws.data.mongodb-api.com/app/data-tgrxq/endpoint/data/v1/action/findOne")
 //					.method("POST", body)
 //					.addHeader("Content-Type", "application/json")
 //					.addHeader("Access-Control-Request-Headers", "*")
-//					.addHeader("api-key", "06hSUyPcpttJInXMG0VolbqAZVS8KNmLr7ueaIllMYpOTYvYCrQCxqJMARh5ayAH")
+//					.addHeader("api-key", "XNwx8Bo4BJa21ME8jxgaXPcyngaNNKUhLDUepbyGw1JKZG0Xxq8MngLlGxeVhOW0")
 //					.build();
 //			Response response = client.newCall(request).execute();
 

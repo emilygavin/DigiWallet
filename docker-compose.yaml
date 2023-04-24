@@ -10,16 +10,16 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=emilygavin
       - MONGO_INITDB_ROOT_PASSWORD=password123
-  mongo-express:
-    image: mongo-express
-    container_name: digiWallet-express
-    restart: always
-    ports:
-      - 8081:8081
-    environment:
-      - ME_CONFIG_MONGODB_ADMINUSERNAME=rootuser
-      - ME_CONFIG_MONGODB_ADMINPASSWORD=rootpass
-      - ME_CONFIG_MONGODB_SERVER=mongodb
+#  mongo-express:
+#    image: mongo-express
+#    container_name: digiWallet-express
+#    restart: always
+#    ports:
+#      - 8081:8081
+#    environment:
+#      - ME_CONFIG_MONGODB_ADMINUSERNAME=rootuser
+#      - ME_CONFIG_MONGODB_ADMINPASSWORD=rootpass
+#      - ME_CONFIG_MONGODB_SERVER=mongodb
 volumes:
   mydata: {}
 

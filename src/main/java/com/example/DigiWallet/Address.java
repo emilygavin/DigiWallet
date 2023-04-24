@@ -1,25 +1,17 @@
 package com.example.DigiWallet;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Embeddable;
 
 @Data
-@Embeddable
+@NoArgsConstructor
+@AllArgsConstructor
 public class Address {
     private String firstLine;
     private String secondLine;
     private String city;
     private String county;
-
-    public Address(String firstLine, String secondLine, String city, String county) {
-        this.firstLine = firstLine;
-        this.secondLine = secondLine;
-        this.city = city;
-        this.county = county;
-    }
-
-    public Address() {
-
-    }
 }
