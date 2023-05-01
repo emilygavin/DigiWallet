@@ -1,7 +1,6 @@
 package com.example.DigiWallet;
 
 import lombok.AllArgsConstructor;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,7 +41,7 @@ public class UserController {
         return userService.addStudentCard(studentCard, id);
     }
 
-    @PostMapping(path = "/addDriverslicense/{id}")
+    @PostMapping(path = "/addDriversLicense/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     public User AddDriversLicense(@RequestBody DriversLicense driversLicense, @PathVariable String id) {
         return userService.addDriversLicense(driversLicense, id);
