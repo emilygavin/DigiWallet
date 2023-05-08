@@ -8,7 +8,6 @@ import javax.persistence.Column;
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
-@AllArgsConstructor
 public class User {
     private String id;
     private String name;
@@ -24,6 +23,16 @@ public class User {
         this.gender = gender;
         this.email = email;
         this.password = password;
+        this.cards = cards;
+    }
+
+    public User(String id, String name, String gender, String email, String password, String uri, Cards cards) {
+        this.id = id;
+        this.name = name;
+        this.gender = gender;
+        this.email = email;
+        this.password = password;
+        this.uri = uri;
         this.cards = cards;
     }
 }
