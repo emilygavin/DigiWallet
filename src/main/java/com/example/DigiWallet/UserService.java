@@ -15,10 +15,14 @@ import java.util.Base64;
 public class UserService {
 
     private final UserRepository userRepository;
-    private final String ENCRYPTION_KEY;
+    private String ENCRYPTION_KEY;
 
     public UserService(UserRepository userRepository, String encryptionKey) {
         this.userRepository = userRepository;
+        this.ENCRYPTION_KEY = encryptionKey;
+    }
+
+    public void setEncryptionKey(String encryptionKey) {
         this.ENCRYPTION_KEY = encryptionKey;
     }
 
